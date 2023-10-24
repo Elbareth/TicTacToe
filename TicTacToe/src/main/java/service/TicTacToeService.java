@@ -31,8 +31,8 @@ public class TicTacToeService {
         if(y >= 3 || y < 0) throw new RuntimeException("Y axis cannot be bigger than 3 or less than 0");
         if(this.ticTacToeMatrix[x][y] != null) throw new RuntimeException("Character cannot be placed on non empty space");
         this.ticTacToeMatrix[x][y] = this.userRoundService.currentRound().toString();
-        this.userRoundService.nextRound();
         checkFinishCondition();
+        this.userRoundService.nextRound();        
         return this.ticTacToeMatrix;
     }
 
